@@ -1,10 +1,18 @@
 import 'dart:io';
 import 'func.dart';
 void main() {
-  Manufact china=Manufact();
-  china.getData();
-  china.getInfo();
+//  dataBase();
+ Cloth adidas=Cloth();
+ adidas.getData();
+ print(adidas.outputInfo());
 
+ Manufact china=Manufact();
+ china.getData();
+ print(china.outputInfo());
+
+ Sostav sostav=Sostav();
+ sostav.getData();
+ print(sostav.outputInfo());
 
 }
 class Cloth{
@@ -18,8 +26,8 @@ class Cloth{
     price=int.parse(stdin.readLineSync()!);
   }
 
-  getInfo(){
-    print('name:$name      price:$price');
+  String outputInfo(){
+   return 'name:$name      price:$price\n'; 
   }
 }
 
@@ -32,20 +40,25 @@ class Manufact extends Cloth{
     manufact=stdin.readLineSync();
    }
    @override
-   getInfo(){
-    print('manufact: $manufact');
+   String outputInfo(){
+    return 'manufact:$manufact\n';
   }
 }
 
 class Sostav extends Cloth{
   String? property;
+  int? metrInOne;
   @override
   getData(){
     print('input property:');
     property=stdin.readLineSync();
+    print('input metrInOne:');
+    metrInOne=int.parse(stdin.readLineSync()!);
    }
+   
+   
    @override
-   getInfo(){
-    print('property: $property');
+   String outputInfo(){
+    return 'property: $property  metrInOne: $metrInOne\n';
   }
 }
