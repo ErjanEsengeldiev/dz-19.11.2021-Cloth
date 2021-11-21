@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'func.dart';
 void main() {
-//  dataBase();
+//  dataBase(); <= Работает!
  Cloth adidas=Cloth();
  adidas.getData();
  print(adidas.outputInfo());
